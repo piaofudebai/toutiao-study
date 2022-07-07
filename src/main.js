@@ -7,14 +7,15 @@ import MyIcon from '@/components/MyIcon.vue'
 import 'vant/lib/index.less'
 import 'amfe-flexible'
 import '@/styles/index.less'
-
+import './components'
 import * as obj from '@/filters'
+import FollowUser from '@/components/FollowUser.vue'
 Vue.component('MyIcon', MyIcon)
 Object.keys(obj).forEach(key => {
   Vue.filter(key, obj[key])
 })
 Vue.use(Vant)
-
+Vue.component(FollowUser.name, FollowUser)
 Vue.config.productionTip = false
 
 new Vue({
