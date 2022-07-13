@@ -34,3 +34,30 @@ export const getUserInfo = () => {
     }
   })
 }
+/*
+*用户个人资料
+ */
+export const getUserProfile = () => {
+  return request({
+    url: 'user/profile'
+  })
+}
+
+export const updateUserProfile = profile => {
+  return request({
+    method: 'PATCH',
+    url: 'user/profile',
+    data: profile
+  })
+}
+
+/* 更新头像
+* 头像裁剪之后的数据 data
+ */
+export const updateAvatar = data => {
+  return request({
+    method: 'PATCH',
+    url: 'user/photo',
+    data
+  })
+}

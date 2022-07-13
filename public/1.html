@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="file"
+      id="file"
+      accept="image/jpeg,image/png,image/gif,image/jpg"
+    />
+  </body>
+  <script>
+    var file = document.getElementById('file')
+    file.onchange = function () {
+        // this.files[0]得到上传的文件的对象
+        // URL.createObjectURL(file实例对象)得到这个文件在内存中的临时路径
+      console.dir(this.files[0])
+      var res = URL.createObjectURL(this.files[0])
+      var img = document.createElement('img')
+      img.src = res
+      document.body.append(img)
+    }
+  </script>
+</html>
